@@ -1,0 +1,29 @@
+0. Apresentação
+
+1. Diferença Classes/Objectos
+
+2. Apresentação de Exercicio para contas bancárias
+
+3. Quais as propriedades ? Atributos da classe
+	- Numero
+	- Nome
+	- Saldo
+
+4. Contrutores
+	- Default
+	- Parametros
+
+5. Quais os comportamentos da classe ? Métodos da classe
+	- Levantar
+	- Depositar
+
+6. Metodos Modificadores(void) e Interrogadores(bool)
+
+7. Metodo toString() e equals()
+
+8. Mais informacação sobre cliente (nif, email, etc.)
+
+9. Referências vs Objectos
+
+10. Exercicio Carros
+

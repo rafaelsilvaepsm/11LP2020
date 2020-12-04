@@ -60,14 +60,13 @@ public class ContaBancaria {
   
   
 	    // CONSTRUTOR DEFAULT
-      	public ContaBancaria() {
-      		
-      	}
+		public ContaBancaria () {
+			
+		}
+      
       
 	    // CONSTRUTOR COM PARÂMETROS
-      	public ContaBancaria(String numeroConta, 
-      			String nomePessoa, String numeroTelemovel, 
-      			String nib, double saldo) {
+		public ContaBancaria(String numeroConta, String nomePessoa, String numeroTelemovel, String nib, double saldo) {
 			super();
 			this.numeroConta = numeroConta;
 			this.nomePessoa = nomePessoa;
@@ -80,32 +79,28 @@ public class ContaBancaria {
 	// =======================================================
 	// =================== .COMPORTAMENTOS ==================
 	// =======================================================
-  
-      	public void Depositar(double valor) {
-      		this.saldo = this.saldo + valor;
-      	}
-      	
-      	public boolean Levantar (double valor) {
-      		if (this.saldo >= valor) {
-      			this.saldo -= valor;
-      			return true;
-      		} else {
-      			return false;
-      		}
-      	}
-      	
-      	public boolean Transferir(double valor, 
-      			ContaBancaria destino) {
-      	
-      		if (this.saldo >= valor) {
-      			this.saldo -= valor;
-      			destino.saldo += valor;
-      			return true;
-      		} else {
-      			return false;
-      		}
-      		
-      	}
+	
+	// A palavra "void" indica que este metodo não vai retornar qualquer valor quando for executado.
+	// Este metodo recebe o parametro valor para enviarmos o valor que é para levantar
+	void depositar (double valor) {
+		this.saldo += valor;
+	}
+
+	boolean levantar (double valor) {
+		if (this.saldo >= valor) {
+			double novoSaldo = this.saldo - valor;
+			this.saldo = novoSaldo;
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	void transferir (ContaBancaria destino, double valor) {
+		this.saldo = this.saldo - valor;
+		destino.saldo = destino.saldo + valor;
+	}
+	
   
 	// =======================================================
 	// ============== MÉTODOS COMPLEMENTARES ==============
